@@ -1,11 +1,11 @@
 import admin from 'firebase-admin';
 
-const serviceAccount = JSON.parse(process.env.FIREBASE_CREDENTIALS);
+const serviceAccount = JSON.parse();
 
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://vercel-credential-default-rtdb.firebaseio.com"
+    databaseURL: process.env.FIREBASE_URL_DB
   });
 }
 
